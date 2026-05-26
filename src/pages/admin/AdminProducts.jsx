@@ -38,7 +38,7 @@ const handleDelete = async () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `http://localhost:3000/api/products/${selectedProduct._id}`,
+      `${import.meta.env.VITE_API_URL}/products/${selectedProduct._id}`,
       {
         method: "DELETE",
         headers: {
@@ -70,7 +70,7 @@ const handleRestore = async (id) => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `http://localhost:3000/api/products/restore/${id}`,
+      `${import.meta.env.VITE_API_URL}/products/restore/${id}`,
       {
         method: "PATCH",
         headers: {
