@@ -128,7 +128,7 @@ function Navbar({
       </div>
 
       <h2 className="logo" onClick={() => navigate("/")}>
-        Urban Store
+        Zapas Store
       </h2>
 
       <div className="nav-actions">
