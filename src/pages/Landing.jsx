@@ -59,13 +59,11 @@ const handleAuthClick = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1>
-  <img 
-    src={logo} 
-    alt="Urban Store" 
-    className="hero-logo"
-  />
-</h1>
+          <img 
+  src={logo} 
+  alt="Urban Store" 
+  className="hero-logo"
+/>
           <p>Las mejores zapatillas urbanas</p>
 
           <div className="hero-buttons">
