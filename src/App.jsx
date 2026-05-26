@@ -24,7 +24,7 @@ import Landing from "./pages/Landing";
 import Auth from "./pages/Auth";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
-import Profile from "./pages/Profile";
+import Profile from "./pages/ProfileTemp";
 import PaymentSuccess from "./pages/PaymentSucess";
 import PaymentFailure from "./pages/PaymentFailure";
 import PaymentPending from "./pages/PaymentPending";
