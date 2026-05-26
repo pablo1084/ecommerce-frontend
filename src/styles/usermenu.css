@@ -1,0 +1,278 @@
+/* =========================================
+   USER MENU — base
+   Vive dentro del side-menu (drawer)
+========================================= */
+
+.user-menu-container {
+  position: relative;
+  width: 100%;
+}
+
+/* =========================================
+   TRIGGER BUTTON
+========================================= */
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.user-button:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   AVATAR
+========================================= */
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e10600;      
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  flex-shrink: 0;
+  min-width: 34px;
+}
+
+.avatar.big {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  min-width: 44px;
+}
+
+/* =========================================
+   LABELS DEL TRIGGER
+========================================= */
+.user-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  flex: 1;
+  text-align: left;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 2px;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+  word-break: break-all;
+}
+
+.arrow {
+  font-size: 9px;
+  color: #888;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* =========================================
+   DROPDOWN
+   Dentro del side-menu se abre hacia abajo
+========================================= */
+.user-dropdown {
+  position: relative;
+  top: unset;
+  right: unset;
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 8px;
+  z-index: 1001;
+  animation: fadeInDown 0.18s ease;
+  box-sizing: border-box;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   BOTÓN CERRAR (X)
+========================================= */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  transition: color 0.2s;
+  line-height: 1;
+  padding: 2px;
+}
+
+.close-btn:hover {
+  color: #e10600;
+}
+
+/* =========================================
+   INFO DE USUARIO
+========================================= */
+.user-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 4px;
+  margin-bottom: 14px;
+  padding-right: 20px;
+}
+
+.user-info .name {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 2px;
+}
+
+.user-info .email {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+  word-break: break-all;
+}
+
+/* =========================================
+   SEPARADOR
+========================================= */
+.user-dropdown hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin: 10px 0;
+}
+
+/* =========================================
+   LINKS
+========================================= */
+.user-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-links a {
+  padding: 9px 10px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-links a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+/* =========================================
+   LOGOUT
+========================================= */
+.logout-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 9px 10px;
+  text-align: left;
+  cursor: pointer;
+  color: #e10600;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout-btn:hover {
+  background: rgba(225, 6, 0, 0.1);
+}
+
+/* =========================================
+   RESPONSIVE — Mobile (≤ 576px)
+========================================= */
+@media (max-width: 576px) {
+  .user-button {
+    padding: 9px 12px;
+  }
+
+  .user-label {
+    font-size: 13px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .avatar.big {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .user-info .name {
+    font-size: 13px;
+  }
+
+  .user-links a,
+  .logout-btn {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — Desktop (1441px+)
+========================================= */
+@media (min-width: 1441px) {
+  .user-label {
+    font-size: 15px;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .user-links a,
+  .logout-btn {
+    font-size: 15px;
+  }
+}

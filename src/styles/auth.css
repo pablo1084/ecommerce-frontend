@@ -1,0 +1,352 @@
+/* =========================
+   BASE / MOBILE FIRST
+   (< 360px)
+========================= */
+
+.auth-container {
+  min-height: 100dvh;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* overlay con gradiente */
+.auth-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.80) 0%,
+    rgba(0, 0, 0, 0.60) 50%,
+    rgba(180, 0, 0, 0.25) 100%
+  );
+  z-index: 1;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.auth-form {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 28px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  border-radius: 20px;
+
+  background: rgba(10, 10, 10, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* =========================
+   TITULO
+========================= */
+
+.auth-titulo {
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.auth-titulo::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 3px;
+  background: #e10600;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.auth-form input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  background: #0d0d0d;
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-form input::placeholder {
+  color: #555;
+}
+
+.auth-form input:focus {
+  border-color: #e10600;
+  background: #111;
+  box-shadow: 0 0 0 3px rgba(225, 6, 0, 0.14);
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.login-error {
+  color: #ff6b6b;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.5;
+  background: rgba(225, 6, 0, 0.08);
+  border: 1px solid rgba(225, 6, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 0;
+}
+
+/* =========================
+   BOTÓN PRINCIPAL
+========================= */
+
+.auth-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #e10600;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-top: 4px;
+}
+
+.auth-btn:hover:not(:disabled) {
+  background: #b00500;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(225, 6, 0, 0.35);
+}
+
+.auth-btn:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================
+   SWITCH LOGIN / REGISTRO
+========================= */
+
+.auth-switch {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.auth-switch span,
+.auth-switch:hover {
+  color: #e10600;
+}
+
+/* =========================
+   VERIFY MESSAGE
+========================= */
+
+.verify-message {
+  padding: 18px 16px;
+  border-radius: 12px;
+  background: #0d0d0d;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: white;
+  text-align: center;
+}
+
+.verify-message h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.verify-message p {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0 0 4px;
+  line-height: 1.5;
+}
+
+.verify-message button {
+  margin-top: 14px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #22c55e;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.verify-message button:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   MOBILE
+   360px — 576px
+========================================= */
+
+@media (min-width: 360px) {
+  .auth-container {
+    padding: 20px;
+  }
+
+  .auth-form {
+    padding: 30px 24px;
+  }
+
+  .auth-titulo {
+    font-size: 1.7rem;
+  }
+}
+
+/* =========================================
+   TABLET / NETBOOK
+   577px — 900px
+========================================= */
+
+@media (min-width: 577px) {
+  .auth-form {
+    max-width: 420px;
+    padding: 38px 32px;
+    gap: 16px;
+  }
+
+  .auth-titulo {
+    font-size: 1.9rem;
+  }
+
+  .auth-form input {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .auth-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   NOTEBOOK
+   901px — 1440px
+========================================= */
+
+@media (min-width: 901px) {
+  .auth-form {
+    max-width: 450px;
+    padding: 44px 38px;
+  }
+
+  .auth-titulo {
+    font-size: 2rem;
+  }
+}
+
+/* =========================================
+   DESKTOP
+   1441px — 1920px
+========================================= */
+
+@media (min-width: 1441px) {
+  .auth-form {
+    max-width: 500px;
+    padding: 52px 44px;
+    border-radius: 24px;
+    gap: 18px;
+  }
+
+  .auth-titulo {
+    font-size: 2.2rem;
+  }
+
+  .auth-form input {
+    font-size: 16px;
+    padding: 15px 16px;
+  }
+
+  .auth-btn {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .auth-switch {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   ULTRAWIDE
+   1921px+
+========================================= */
+
+@media (min-width: 1921px) {
+  .auth-form {
+    max-width: 560px;
+    padding: 60px 52px;
+    gap: 20px;
+  }
+
+  .auth-titulo {
+    font-size: 2.6rem;
+  }
+
+  .auth-form input {
+    font-size: 17px;
+    padding: 16px 18px;
+    border-radius: 12px;
+  }
+
+  .auth-btn {
+    font-size: 17px;
+    padding: 17px;
+    border-radius: 12px;
+  }
+}

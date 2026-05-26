@@ -1,0 +1,272 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+  width:100%;
+  overflow-x:hidden;
+   margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  margin: 30px auto 0;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.admin-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.orders-filters button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #111;
+  color: white;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.orders-filters button:hover {
+  opacity: 0.85;
+}
+
+
+.name {
+  font-weight: bold;
+}
+
+.email {
+  font-size: 12px;
+  color: gray;
+}
+
+/*===============================================MODAL CONFIRMACION================================================*/
+
+@keyframes modalFade {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-modal {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.checkout-modal h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.checkout-modal p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border: 6px solid #eee;
+  border-top: 6px solid red;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================================
+   ADMIN SKELETON
+========================================= */
+
+.admin-table-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.admin-skeleton-row {
+  display: grid;
+  grid-template-columns:
+    2fr
+    1fr
+    1fr
+    1fr
+    1fr
+    1.5fr;
+  gap: 12px;
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+.skeleton-cell {
+  height: 20px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    #ececec 25%,
+    #f5f5f5 50%,
+    #ececec 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.2s infinite;
+}
+
+.skeleton-cell.large {
+  height: 24px;
+}
+
+.skeleton-cell.badge {
+  width: 70%;
+}
+
+.skeleton-cell.buttons {
+  width: 90%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* =========================================
+   CUSTOM TOAST
+========================================= */
+
+.custom-toast {
+  min-width: 320px;
+  background: #111;
+  color: white;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.toast-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.toast-content h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.toast-content p {
+  margin: 4px 0 0;
+  color: #bbb;
+  font-size: 14px;
+}
+
+/* Animaciones */
+
+.toast-enter {
+  animation:
+    toastIn 0.25s ease;
+}
+
+.toast-leave {
+  animation:
+    toastOut 0.2s ease forwards;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform:
+      translateX(40px)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateX(0)
+      scale(1);
+  }
+}
+
+@keyframes toastOut {
+  to {
+    opacity: 0;
+    transform:
+      translateX(30px)
+      scale(0.96);
+  }
+}
