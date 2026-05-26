@@ -7,6 +7,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
 import "../styles/landing.css";
+import logo from "../assets/zapas-hero.png"
 
 function Landing() {
   const navigate = useNavigate();
@@ -58,7 +59,13 @@ const handleAuthClick = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1>Urban Store</h1>
+          <h1>
+  <img 
+    src={logo} 
+    alt="Urban Store" 
+    className="hero-logo"
+  />
+</h1>
           <p>Las mejores zapatillas urbanas</p>
 
           <div className="hero-buttons">

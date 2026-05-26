@@ -26,6 +26,15 @@
 /* =========================================
    HERO CONTENT
 ========================================= */
+.hero-logo {
+  width: 320px;
+  max-width: 80vw;
+  display: block;
+  margin: 0 auto 20px;
+  mix-blend-mode: screen;  /* ← elimina el fondo blanco sobre fondos oscuros */
+  filter: brightness(1.1); /* ← opcional: un poco más de brillo */
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -195,6 +204,10 @@
    RESPONSIVE — Mobile (≤ 576px)
 ========================================= */
 @media (max-width: 576px) {
+  .hero-logo {
+    width: 220px;
+  }
+  
   .landing {
     /* background-attachment: fixed rompe en iOS */
     background-attachment: scroll;
@@ -237,6 +250,10 @@
    RESPONSIVE — Desktop (1441px – 1920px)
 ========================================= */
 @media (min-width: 1441px) and (max-width: 1920px) {
+  .hero-logo {
+    width: 420px;
+  }
+  
   .hero h1 {
     font-size: 90px;
     letter-spacing: 8px;
